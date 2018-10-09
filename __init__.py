@@ -45,9 +45,8 @@ class FamilyLearningSkill(MycroftSkill):
         
        
     @intent_handler(IntentBuilder("FamilyLearningIntent").require("FamilyLearningKeyword"))
-    def handle_open_shutters_intent(self, message):
+    def handle_family_learning_intent(self, message):
         self.speak_dialog("save.it.memory")
- #       r = requests.get("http://"+Ip_Address+"/?up")
 
 
     def stop(self):
