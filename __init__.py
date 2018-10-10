@@ -93,8 +93,7 @@ class FamilyLearningSkill(MycroftSkill):
         i=0
         while i< len(membersname):
             if (membersname[i]['rank'] == "daughter"):
-                name = membersname[i]['first_name']
-#                self.speak_dialog('{} is your daughter'.format(name))
+                namelist = membersname[i]['first_name']
             i = i +1
         i=1
         if len(namelist) ==0 :
@@ -125,8 +124,7 @@ class FamilyLearningSkill(MycroftSkill):
         i=0
         while i< len(membersname):
             if (membersname[i]['rank'] == "grand_son"):
-                name = membersname[i]['first_name']
-#                self.speak_dialog('{} is your grand-son'.format(name))
+                namelist = membersname[i]['first_name']
             i = i +1
         i=1
         if len(namelist) ==0 :
@@ -156,8 +154,7 @@ class FamilyLearningSkill(MycroftSkill):
         i=0
         while i< len(membersname):
             if (membersname[i]['rank'] == "grand_daughter"):
-                name = membersname[i]['first_name']
-#                self.speak_dialog('{} is your grand daughter'.format(name))
+                namelist = membersname[i]['first_name']
             i = i +1
         i=1
         if len(namelist) ==0 :
