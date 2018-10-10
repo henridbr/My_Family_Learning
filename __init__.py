@@ -69,7 +69,7 @@ class FamilyLearningSkill(MycroftSkill):
         if len(namelist) ==0 :
             self.speak_dialog('you have no son')
         elif len(namelist) ==1 :
-            self.speak_dialog(namelist[0],"is your son")            
+            self.speak_dialog(namelist[0] + " is your son")            
         else:
             namegroup = namelist[0]
             while i< len(namelist):
@@ -99,7 +99,7 @@ class FamilyLearningSkill(MycroftSkill):
         if len(namelist) ==0 :
             self.speak_dialog('you have no daughter')
         elif len(namelist) ==1 :
-            self.speak_dialog(namelist[0] + "is your daughter")            
+            self.speak_dialog(namelist[0] + " is your daughter")            
         else:
             namegroup = namelist[0]
             while i< len(namelist):
@@ -130,7 +130,7 @@ class FamilyLearningSkill(MycroftSkill):
         if len(namelist) ==0 :
             self.speak_dialog('you have no grand son')
         elif len(namelist) ==1 :
-            self.speak_dialog(namelist[0],"is your grand son")            
+            self.speak_dialog(namelist[0] + " is your grand son")            
         else:
             namegroup = namelist[0]
             while i< len(namelist):
@@ -160,7 +160,7 @@ class FamilyLearningSkill(MycroftSkill):
         if len(namelist) ==0 :
             self.speak_dialog('you have no grand daughter')
         elif len(namelist) ==1 :
-            self.speak_dialog(namelist[0],"is your grand daughter")            
+            self.speak_dialog(namelist[0] + " is your grand daughter")            
         else:
             namegroup = namelist[0]
             while i< len(namelist):
