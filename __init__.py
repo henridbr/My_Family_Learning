@@ -57,9 +57,10 @@ class FamilyLearningSkill(MycroftSkill):
 
         membersname = family['family_dictionary']['members']
         
-        i=0
         namelist = []
         namegroup = ""
+        
+        i=0
         while i< len(membersname):
             if (membersname[i]['rank'] == "son"):
                 namelist.append(membersname[i]['first_name'])
@@ -83,19 +84,30 @@ class FamilyLearningSkill(MycroftSkill):
 
         with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
             family = json.load(read_file)
-        #print(family)
 
         membersname = family['family_dictionary']['members']
-        #print(membersname)    
-        #print("members :",len(membersname)) 
 
+        namelist = []
+        namegroup = ""
+        
         i=0
         while i< len(membersname):
             if (membersname[i]['rank'] == "daughter"):
                 name = membersname[i]['first_name']
-#               print (i,name)
                 self.speak_dialog('{} is your daughter'.format(name))
             i = i +1
+        i=1
+        if len(namelist) ==0 :
+            self.speak_dialog('you have no daughter')
+        elif len(namelist) ==1 :
+            self.speak_dialog('{} is your daughter'.format(namelist))            
+        else:
+            namegroup = namelist[0]
+            while i< len(namelist):
+                namegroup = namegroup +" and " + namelist[i]
+                i = i+1
+            self.speak_dialog('{} are your daughters'.format(namegroup))
+
         
         
 ##### Grand Son
@@ -104,19 +116,30 @@ class FamilyLearningSkill(MycroftSkill):
 
         with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
             family = json.load(read_file)
-        #print(family)
 
         membersname = family['family_dictionary']['members']
-        #print(membersname)    
-        #print("members :",len(membersname)) 
 
+        namelist = []
+        namegroup = ""
+        
         i=0
         while i< len(membersname):
             if (membersname[i]['rank'] == "grand_son"):
                 name = membersname[i]['first_name']
-#               print (i,name)
                 self.speak_dialog('{} is your grand-son'.format(name))
             i = i +1
+        i=1
+        if len(namelist) ==0 :
+            self.speak_dialog('you have no grand son')
+        elif len(namelist) ==1 :
+            self.speak_dialog('{} is your grand son'.format(namelist))            
+        else:
+            namegroup = namelist[0]
+            while i< len(namelist):
+                namegroup = namegroup +" and " + namelist[i]
+                i = i+1
+            self.speak_dialog('{} are your grand sons'.format(namegroup))
+
         
 ##### Grand Daughter
     @intent_handler(IntentBuilder("GrandDaughterIntent").require("GrandDaughterKeyword"))
@@ -124,19 +147,29 @@ class FamilyLearningSkill(MycroftSkill):
 
         with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
             family = json.load(read_file)
-        #print(family)
 
         membersname = family['family_dictionary']['members']
-        #print(membersname)    
-        #print("members :",len(membersname)) 
 
+        namelist = []
+        namegroup = ""
+        
         i=0
         while i< len(membersname):
             if (membersname[i]['rank'] == "grand_daughter"):
                 name = membersname[i]['first_name']
-#               print (i,name)
                 self.speak_dialog('{} is your grand-daughter'.format(name))
             i = i +1
+        i=1
+        if len(namelist) ==0 :
+            self.speak_dialog('you have no grand_daughter')
+        elif len(namelist) ==1 :
+            self.speak_dialog('{} is your grand_daughter'.format(namelist))            
+        else:
+            namegroup = namelist[0]
+            while i< len(namelist):
+                namegroup = namegroup +" and " + namelist[i]
+                i = i+1
+            self.speak_dialog('{} are your grand_daughters'.format(namegroup))
 
     
     def stop(self):
