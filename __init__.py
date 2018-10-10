@@ -52,7 +52,7 @@ class FamilyLearningSkill(MycroftSkill):
     @intent_handler(IntentBuilder("GrandDaughterIntent").require("GrandDaughterKeyword"))
     def handle_grand_daughter_intent(self, message):
 
-        with open("family.book.json", "r") as read_file:
+        with open("familybook.json", "r") as read_file:
             family = json.load(read_file)
 
         #print(family)
