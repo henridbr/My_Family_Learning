@@ -93,7 +93,7 @@ class FamilyLearningSkill(MycroftSkill):
         i=0
         while i< len(membersname):
             if (membersname[i]['rank'] == "daughter"):
-                namelist = membersname[i]['first_name']
+                namelist.append(membersname[i]['first_name'])
             i = i +1
         i=1
         if len(namelist) ==0 :
@@ -124,7 +124,7 @@ class FamilyLearningSkill(MycroftSkill):
         i=0
         while i< len(membersname):
             if (membersname[i]['rank'] == "grand_son"):
-                namelist = membersname[i]['first_name']
+                namelist.append(membersname[i]['first_name'])
             i = i +1
         i=1
         if len(namelist) ==0 :
@@ -154,7 +154,7 @@ class FamilyLearningSkill(MycroftSkill):
         i=0
         while i< len(membersname):
             if (membersname[i]['rank'] == "grand_daughter"):
-                namelist = membersname[i]['first_name']
+                namelist.append(membersname[i]['first_name'])
             i = i +1
         i=1
         if len(namelist) ==0 :
