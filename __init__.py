@@ -43,11 +43,7 @@ class FamilyLearningSkill(MycroftSkill):
     def __init__(self):
         super(FamilyLearningSkill, self).__init__(name="FamilyLearningSkill")
         
-        with open("familybook.json", "r") as read_file:
-            family = json.load(read_file)
-        #print(family)
-
-       
+        
     @intent_handler(IntentBuilder("FamilyLearningIntent").require("FamilyLearningKeyword"))
     def handle_family_learning_intent(self, message):
         self.speak_dialog("save.it.memory")
@@ -56,6 +52,9 @@ class FamilyLearningSkill(MycroftSkill):
     @intent_handler(IntentBuilder("GrandDaughterIntent").require("GrandDaughterKeyword"))
     def handle_grand_daughter_intent(self, message):
 
+        with open("familybook.json", "r") as read_file:
+            family = json.load(read_file)
+        #print(family)
 
         membersname = family['family_dictionary']['members']
         #print(membersname)    
