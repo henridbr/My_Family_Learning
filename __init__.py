@@ -31,7 +31,7 @@ from mycroft.util.log import getLogger
 from mycroft import intent_handler
 
 import requests
-
+#import json
 
 __author__ = 'henridbr' # hd@uip
 
@@ -48,28 +48,28 @@ class FamilyLearningSkill(MycroftSkill):
     def handle_family_learning_intent(self, message):
         self.speak_dialog("save.it.memory")
 
-import json
 
-with open("family.dictionary.list.json", "r") as read_file:
-    data = json.load(read_file)
+    @intent_handler(IntentBuilder("GrandDaughterIntent").require("GrandDaughterKeyword"))
+    def handle_grand_daughter_intent(self, message):
 
-#print(data)
+        with open("family.dictionary.list.json", "r") as read_file:
+            family = json.load(read_file)
 
-membersname = data["family_dictionary"]['members']
-#print(membersname)    
-print("members :",len(membersname)) 
+        #print(family)
 
-i=0
-while i< len(membersname):
-    if (membersname[i]['rank']=="grand-daughter"):
-        name = membersname[i]['first_name']
-        print (i,name)
-    i = i +1
+        membersname = data["family_dictionary"]['members']
+        #print(membersname)    
+        #print("members :",len(membersname)) 
+
+        i=0
+        while i< len(membersname):
+            if (membersname[i]['rank']=="grand-daughter"):
+                name = membersname[i]['first_name']
+#               print (i,name)
+            i = i +1
+
+        self.speak_dialog('{} is my grand-daughter'.format(name))
     
-
-        
-        
-
     def stop(self):
         pass
 
