@@ -31,7 +31,7 @@ from mycroft.util.log import getLogger
 from mycroft import intent_handler
 
 import requests
-#import json
+import json
 
 __author__ = 'henridbr' # hd@uip
 
