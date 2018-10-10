@@ -62,7 +62,7 @@ class FamilyLearningSkill(MycroftSkill):
 
         i=0
         while i< len(membersname):
-            if (membersname[i]['rank']=="son"):
+            if (membersname[i]['rank'] is "son"):
                 name = membersname[i]['first_name']
 #               print (i,name)
                 self.speak_dialog('{} is your son'.format(name))
@@ -83,7 +83,7 @@ class FamilyLearningSkill(MycroftSkill):
 
         i=0
         while i< len(membersname):
-            if (membersname[i]['rank']=="daughter"):
+            if (membersname[i]['rank'] is "daughter"):
                 name = membersname[i]['first_name']
 #               print (i,name)
                 self.speak_dialog('{} is your daughter'.format(name))
@@ -104,7 +104,7 @@ class FamilyLearningSkill(MycroftSkill):
 
         i=0
         while i< len(membersname):
-            if (membersname[i]['rank']=="grand_son"):
+            if (membersname[i]['rank'] is "grand_son"):
                 name = membersname[i]['first_name']
 #               print (i,name)
                 self.speak_dialog('{} is your grand-son'.format(name))
@@ -124,12 +124,13 @@ class FamilyLearningSkill(MycroftSkill):
 
         i=0
         while i< len(membersname):
-            if (membersname[i]['rank']=="grand_daughter"):
+            if (membersname[i]['rank'] is "grand_daughter"):
                 name = membersname[i]['first_name']
 #               print (i,name)
                 self.speak_dialog('{} is your grand-daughter'.format(name))
             i = i +1
 
+        
 ##### Location
     @intent_handler(IntentBuilder("MemberLocationIntent").require("MemberLocationKeyword"))
     def handle_member_location_intent(self, message):
@@ -144,7 +145,7 @@ class FamilyLearningSkill(MycroftSkill):
 
         i=0
         while i< len(membersname):
-            if (membersname[i]['rank']=="grand_daughter"):
+            if (membersname[i]['rank'] is "grand_daughter"):
                 name = membersname[i]['first_name']
 #               print (i,name)
                 self.speak_dialog('{} is your grand-daughter'.format(name))
