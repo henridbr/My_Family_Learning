@@ -94,7 +94,7 @@ class FamilyLearningSkill(MycroftSkill):
         while i< len(membersname):
             if (membersname[i]['rank'] == "daughter"):
                 name = membersname[i]['first_name']
-                self.speak_dialog('{} is your daughter'.format(name))
+#                self.speak_dialog('{} is your daughter'.format(name))
             i = i +1
         i=1
         if len(namelist) ==0 :
@@ -126,7 +126,7 @@ class FamilyLearningSkill(MycroftSkill):
         while i< len(membersname):
             if (membersname[i]['rank'] == "grand_son"):
                 name = membersname[i]['first_name']
-                self.speak_dialog('{} is your grand-son'.format(name))
+#                self.speak_dialog('{} is your grand-son'.format(name))
             i = i +1
         i=1
         if len(namelist) ==0 :
@@ -157,19 +157,19 @@ class FamilyLearningSkill(MycroftSkill):
         while i< len(membersname):
             if (membersname[i]['rank'] == "grand_daughter"):
                 name = membersname[i]['first_name']
-                self.speak_dialog('{} is your grand-daughter'.format(name))
+#                self.speak_dialog('{} is your grand daughter'.format(name))
             i = i +1
         i=1
         if len(namelist) ==0 :
-            self.speak_dialog('you have no grand_daughter')
+            self.speak_dialog('you have no grand daughter')
         elif len(namelist) ==1 :
-            self.speak_dialog('{} is your grand_daughter'.format(namelist))            
+            self.speak_dialog('{} is your grand daughter'.format(namelist))            
         else:
             namegroup = namelist[0]
             while i< len(namelist):
                 namegroup = namegroup +" and " + namelist[i]
                 i = i+1
-            self.speak_dialog('{} are your grand_daughters'.format(namegroup))
+            self.speak_dialog('{} are your grand daughters'.format(namegroup))
 
     
     def stop(self):
