@@ -177,7 +177,7 @@ class FamilyLearningSkill(MycroftSkill):
             family = json.load(read_file)
 
         membersname = family['family_dictionary']['members']
-        member = message.data.get('family_member')
+        member = "Elodie" # message.data.get('family_member')
         print(member)
         memberslivingplace ={}
 
