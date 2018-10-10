@@ -168,6 +168,32 @@ class FamilyLearningSkill(MycroftSkill):
                 i = i+1
             self.speak_dialog('{} are your grand daughters'.format(namegroup))
 
+            
+#### Living Place
+#    @intent_handler(IntentBuilder().require('PythonPerson').require('WhereFrom'))
+    @intent_handler(IntentBuilder("LivingPlaceIntent").require("LivingPlaceKeyword").require("family_member"))
+
+    def handle_living_place(self, message):
+        
+            with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
+            family = json.load(read_file)
+
+        member = message.data.get('family_member')
+        
+        memberslivingplace ={}
+
+        i=0
+        while i< len(membersname):
+            who = membersname[i]['first_name']
+            where = membersname[i]['location']
+            memberslivingplace[who] = where
+            i = i +1
+
+            livingplace = memberslivingplace[member]
+ 
+        self.speak('{} is from {}'.format(member, livingplace))
+            
+            
     
     def stop(self):
         pass
