@@ -15,12 +15,12 @@
 # You should have received a copy of the GNU General Public License
 # along with Mycroft Core.  If not, see <http://www.gnu.org/licenses/>.
 
-# SWK_rolling_shutters
-# Mycroft <-> Wemos mini
-# ESP8266_IP_address : http://RS_IpAddress/
-# command : /?up
-# command : /?down
-# command : /?shadow
+# Mycroft_family_learning
+# 
+# 
+# 
+# 
+# 
 
 
 # Mycroft libraries
@@ -48,6 +48,27 @@ class FamilyLearningSkill(MycroftSkill):
     def handle_family_learning_intent(self, message):
         self.speak_dialog("save.it.memory")
 
+import json
+
+with open("family.dictionary.list.json", "r") as read_file:
+    data = json.load(read_file)
+
+#print(data)
+
+membersname = data["family_dictionary"]['members']
+#print(membersname)    
+print("members :",len(membersname)) 
+
+i=0
+while i< len(membersname):
+    if (membersname[i]['rank']=="grand-daughter"):
+        name = membersname[i]['first_name']
+        print (i,name)
+    i = i +1
+    
+
+        
+        
 
     def stop(self):
         pass
