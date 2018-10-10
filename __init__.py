@@ -65,7 +65,7 @@ class FamilyLearningSkill(MycroftSkill):
             if (membersname[i]['rank']=="son"):
                 name = membersname[i]['first_name']
 #               print (i,name)
-                self.speak_dialog('{} is my son'.format(name))
+                self.speak_dialog('{} is your son'.format(name))
             i = i +1
         
         
@@ -86,7 +86,7 @@ class FamilyLearningSkill(MycroftSkill):
             if (membersname[i]['rank']=="daughter"):
                 name = membersname[i]['first_name']
 #               print (i,name)
-                self.speak_dialog('{} is my daughter'.format(name))
+                self.speak_dialog('{} is your daughter'.format(name))
             i = i +1
         
         
@@ -107,7 +107,7 @@ class FamilyLearningSkill(MycroftSkill):
             if (membersname[i]['rank']=="grand_son"):
                 name = membersname[i]['first_name']
 #               print (i,name)
-                self.speak_dialog('{} is my grand-son'.format(name))
+                self.speak_dialog('{} is your grand-son'.format(name))
             i = i +1
         
 ##### Grand Daughter
@@ -127,7 +127,7 @@ class FamilyLearningSkill(MycroftSkill):
             if (membersname[i]['rank']=="grand_daughter"):
                 name = membersname[i]['first_name']
 #               print (i,name)
-                self.speak_dialog('{} is my grand-daughter'.format(name))
+                self.speak_dialog('{} is your grand-daughter'.format(name))
             i = i +1
 
 ##### Location
@@ -147,7 +147,7 @@ class FamilyLearningSkill(MycroftSkill):
             if (membersname[i]['rank']=="grand_daughter"):
                 name = membersname[i]['first_name']
 #               print (i,name)
-                self.speak_dialog('{} is my grand-daughter'.format(name))
+                self.speak_dialog('{} is your grand-daughter'.format(name))
             i = i +1
 
     
