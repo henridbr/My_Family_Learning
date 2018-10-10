@@ -1,0 +1,27 @@
+{
+    "family_dictionary" :{
+        "members": [
+			{
+			"first_name":"Christophe","rank":"son","age":"46","father":"Henri"
+			},
+			{
+			"first_name":"Vincent","rank":"son","age":"45","father":"Henri"
+			},
+			{
+			"first_name":"Elodie","rank":"daughter","age":"40","father":"Henri"
+			},
+			{
+			"first_name":"Anatole","rank":"grand-son","age":"13","father":"Vincent"
+			},
+			{
+			"first_name":"Stephane","rank":"grand-son","age":"10","father":"Christophe"
+			},
+			{
+			"first_name":"Manon","rank":"grand-daughter","age":"13","father":"Christophe"
+			},
+			{
+			"first_name":"Juliette","rank":"grand-daughter","age":"11","father":"Vincent"
+			}
+		]
+    }
+}
