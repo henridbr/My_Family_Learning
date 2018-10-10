@@ -62,7 +62,7 @@ class FamilyLearningSkill(MycroftSkill):
 
         i=0
         while i< len(membersname):
-            if (membersname[i]['rank'] is "son"):
+            if (membersname[i]['rank'] == "son"):
                 name = membersname[i]['first_name']
 #               print (i,name)
                 self.speak_dialog('{} is your son'.format(name))
@@ -71,7 +71,7 @@ class FamilyLearningSkill(MycroftSkill):
         
 ##### Daughter
     @intent_handler(IntentBuilder("GrandDaughterIntent").require("DaughterKeyword"))
-    def handledaughter_intent(self, message):
+    def handle_daughter_intent(self, message):
 
         with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
             family = json.load(read_file)
@@ -83,7 +83,7 @@ class FamilyLearningSkill(MycroftSkill):
 
         i=0
         while i< len(membersname):
-            if (membersname[i]['rank'] is "daughter"):
+            if (membersname[i]['rank'] == "daughter"):
                 name = membersname[i]['first_name']
 #               print (i,name)
                 self.speak_dialog('{} is your daughter'.format(name))
@@ -104,7 +104,7 @@ class FamilyLearningSkill(MycroftSkill):
 
         i=0
         while i< len(membersname):
-            if (membersname[i]['rank'] is "grand_son"):
+            if (membersname[i]['rank'] == "grand_son"):
                 name = membersname[i]['first_name']
 #               print (i,name)
                 self.speak_dialog('{} is your grand-son'.format(name))
@@ -124,7 +124,7 @@ class FamilyLearningSkill(MycroftSkill):
 
         i=0
         while i< len(membersname):
-            if (membersname[i]['rank'] is "grand_daughter"):
+            if (membersname[i]['rank'] == "grand_daughter"):
                 name = membersname[i]['first_name']
 #               print (i,name)
                 self.speak_dialog('{} is your grand-daughter'.format(name))
