@@ -54,7 +54,6 @@ class FamilyLearningSkill(MycroftSkill):
 
         with open("familybook.json", "r") as read_file:
             family = json.load(read_file)
-
         #print(family)
 
         membersname = data["family_dictionary"]['members']
