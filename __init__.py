@@ -65,15 +65,15 @@ class FamilyLearningSkill(MycroftSkill):
                 namelist.append(membersname[i]['first_name'])
             i = i+1
         i=1
-        if len(namelist) =0 :
+        if len(namelist) ==0 :
             self.speak_dialog('you have no son')
-        elif len(namelist) =1 :
+        elif len(namelist) ==1 :
             self.speak_dialog('{} is your son'.format(namelist))            
         else:
             namegroup = namelist[0]
             while i< len(namelist):
                 namegroup = namegroup +" and " + namelist[i]
-            i = i+1
+                i = i+1
             self.speak_dialog('{} are your sons'.format(namegroup))
      
         
