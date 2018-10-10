@@ -54,20 +54,28 @@ class FamilyLearningSkill(MycroftSkill):
 
         with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
             family = json.load(read_file)
-        #print(family)
 
         membersname = family['family_dictionary']['members']
-        #print(membersname)    
-        #print("members :",len(membersname)) 
-
+        
         i=0
+        namelist = []
+        namegroup = ""
         while i< len(membersname):
             if (membersname[i]['rank'] == "son"):
-                name = membersname[i]['first_name']
-#               print (i,name)
-                self.speak_dialog('{} is your son'.format(name))
-            i = i +1
-        
+                namelist.append(membersname[i]['first_name'])
+            i = i+1
+        i=1
+        if len(namelist) =0 :
+            self.speak_dialog('you have no son')
+        elif len(namelist) =1 :
+            self.speak_dialog('{} is your son'.format(namelist))            
+        else:
+            namegroup = namelist[0]
+            while i< len(namelist):
+                namegroup = namegroup +" and " + namelist[i]
+            i = i+1
+            self.speak_dialog('{} are your sons'.format(namegroup))
+     
         
 ##### Daughter
     @intent_handler(IntentBuilder("DaughterIntent").require("DaughterKeyword"))
