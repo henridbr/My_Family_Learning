@@ -48,7 +48,69 @@ class FamilyLearningSkill(MycroftSkill):
     def handle_family_learning_intent(self, message):
         self.speak_dialog("save.it.memory")
 
+##### Son
+    @intent_handler(IntentBuilder("SonIntent").require("SonKeyword"))
+    def handle_son_intent(self, message):
 
+        with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
+            family = json.load(read_file)
+        #print(family)
+
+        membersname = family['family_dictionary']['members']
+        #print(membersname)    
+        #print("members :",len(membersname)) 
+
+        i=0
+        while i< len(membersname):
+            if (membersname[i]['rank']=="son"):
+                name = membersname[i]['first_name']
+#               print (i,name)
+                self.speak_dialog('{} is my son'.format(name))
+            i = i +1
+        
+        
+##### Daughter
+    @intent_handler(IntentBuilder("GrandDaughterIntent").require("DaughterKeyword"))
+    def handledaughter_intent(self, message):
+
+        with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
+            family = json.load(read_file)
+        #print(family)
+
+        membersname = family['family_dictionary']['members']
+        #print(membersname)    
+        #print("members :",len(membersname)) 
+
+        i=0
+        while i< len(membersname):
+            if (membersname[i]['rank']=="daughter"):
+                name = membersname[i]['first_name']
+#               print (i,name)
+                self.speak_dialog('{} is my daughter'.format(name))
+            i = i +1
+        
+        
+##### Grand Son
+    @intent_handler(IntentBuilder("GrandSonIntent").require("GrandSonKeyword"))
+    def handle_grand_son_intent(self, message):
+
+        with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
+            family = json.load(read_file)
+        #print(family)
+
+        membersname = family['family_dictionary']['members']
+        #print(membersname)    
+        #print("members :",len(membersname)) 
+
+        i=0
+        while i< len(membersname):
+            if (membersname[i]['rank']=="grand son"):
+                name = membersname[i]['first_name']
+#               print (i,name)
+                self.speak_dialog('{} is my grand-son'.format(name))
+            i = i +1
+        
+##### Grand Daughter
     @intent_handler(IntentBuilder("GrandDaughterIntent").require("GrandDaughterKeyword"))
     def handle_grand_daughter_intent(self, message):
 
