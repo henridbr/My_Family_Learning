@@ -172,13 +172,12 @@ class FamilyLearningSkill(MycroftSkill):
 #### Living Place
 #    @intent_handler(IntentBuilder().require('PythonPerson').require('WhereFrom'))
     @intent_handler(IntentBuilder("LivingPlaceIntent").require("LivingPlaceKeyword").require("family_member"))
-
     def handle_living_place(self, message):
         
-            with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
-            family = json.load(read_file)
+        with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
+        family = json.load(read_file)
 
-        member = message.data.get('family_member')
+#        member = message.data.get('family_member')
         
         memberslivingplace ={}
 
@@ -189,9 +188,9 @@ class FamilyLearningSkill(MycroftSkill):
             memberslivingplace[who] = where
             i = i +1
 
-            livingplace = memberslivingplace[member]
+#            livingplace = memberslivingplace[member]
  
-        self.speak('{} is from {}'.format(member, livingplace))
+#        self.speak('{} is from {}'.format(member, livingplace))
             
             
     
