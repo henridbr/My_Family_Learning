@@ -81,9 +81,6 @@ class FamilyLearningSkill(MycroftSkill):
 ##### Daughter
     @intent_handler(IntentBuilder("DaughterIntent").require("DaughterKeyword"))
     def handle_daughter_intent(self, message):
-
-        messpass = message
-        print(messpass)
            
         with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
             family = json.load(read_file)
@@ -176,6 +173,7 @@ class FamilyLearningSkill(MycroftSkill):
 #    @intent_handler(IntentBuilder("LivingPlaceIntent").require("LivingPlaceKeyword").require("FamilyFirstName"))
     @intent_handler(IntentBuilder("LivingPlaceIntent").require("LivingPlaceKeyword"))
     def handle_living_place(self, message):
+
         member = "Elodie"  
 #        member = message.data.get('FamilyFirstName')
         print("member : ", member)
