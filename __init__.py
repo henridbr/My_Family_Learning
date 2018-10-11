@@ -82,7 +82,7 @@ class FamilyLearningSkill(MycroftSkill):
     @intent_handler(IntentBuilder("DaughterIntent").require("DaughterKeyword"))
     def handle_daughter_intent(self, message):
 
-        messpass = self.message
+        messpass = message
         print(messpass)
            
         with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
