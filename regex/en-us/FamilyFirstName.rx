@@ -1,1 +1,1 @@
-(?P<FamilyFirstName>^\u)
+(?P<FamilyFirstName>.*\^\u)
