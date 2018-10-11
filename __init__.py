@@ -174,6 +174,7 @@ class FamilyLearningSkill(MycroftSkill):
     def handle_living_place(self, message):
   
         member = message.data.get('FamilyFirstName')
+        print(member)
         member = member.capitalize()
         member = member.split( )
         member = member[0]
