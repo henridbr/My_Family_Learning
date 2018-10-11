@@ -176,7 +176,7 @@ class FamilyLearningSkill(MycroftSkill):
 #       member = "Elodie"  
 #       member = message.data.get('FamilyFirstName')
         member = FamilyFirstName
-        print( member)
+        print("member : ", member)
                
         with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
             family = json.load(read_file)
