@@ -173,6 +173,7 @@ class FamilyLearningSkill(MycroftSkill):
     @intent_handler(IntentBuilder("LivingPlaceIntent").require("LivingPlaceKeyword").optionally("FamilyFirstName"))
 #    @intent_handler(IntentBuilder("LivingPlaceIntent").require("LivingPlaceKeyword"))
     def handle_living_place(self, message):
+        print(message)
 #       member = "Elodie"  
         member = message.data.get('FamilyFirstName')
         print( member)
