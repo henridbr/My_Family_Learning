@@ -170,12 +170,12 @@ class FamilyLearningSkill(MycroftSkill):
 
             
 #### Living Place
-    @intent_handler(IntentBuilder("LivingPlaceIntent").require("LivingPlaceKeyword").optionally("FamilyFirstName"))
+    @intent_handler(IntentBuilder("LivingPlaceIntent").require("LivingPlaceKeyword").require("FamilyFirstName"))
 #    @intent_handler(IntentBuilder("LivingPlaceIntent").require("LivingPlaceKeyword"))
     def handle_living_place(self, message):
-        print(message)
 #       member = "Elodie"  
-        member = message.data.get('FamilyFirstName')
+#       member = message.data.get('FamilyFirstName')
+        member = FamilyFirstName
         print( member)
                
         with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
