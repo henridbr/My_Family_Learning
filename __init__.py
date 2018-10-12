@@ -16,12 +16,6 @@
 # along with Mycroft Core.  If not, see <http://www.gnu.org/licenses/>.
 
 # Mycroft_family_learning
-# 
-# 
-# 
-# 
-# 
-
 
 # Mycroft libraries
 
@@ -29,6 +23,7 @@ from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
 from mycroft.util.log import getLogger
 from mycroft import intent_handler
+
 
 import requests
 import json
@@ -42,7 +37,6 @@ class FamilyLearningSkill(MycroftSkill):
 
     def __init__(self):
         super(FamilyLearningSkill, self).__init__(name="FamilyLearningSkill")
-        
         
     @intent_handler(IntentBuilder("FamilyLearningIntent").require("FamilyLearningKeyword"))
     def handle_family_learning_intent(self, message):
@@ -181,7 +175,7 @@ class FamilyLearningSkill(MycroftSkill):
                
         with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
             family = json.load(read_file)
-        print(self.filesystem.path)
+"        print(self.filesystem.path)
         membersname = family['family_dictionary']['members']
 
         memberslivingplace ={}
