@@ -47,7 +47,6 @@ class FamilyLearningSkill(MycroftSkill):
     def handle_son_intent(self, message):
 
         with open(join(self._dir, 'familybook.json'), "r") as read_file:
- #       with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
             family = json.load(read_file)
 
         membersname = family['family_dictionary']['members']
@@ -77,7 +76,7 @@ class FamilyLearningSkill(MycroftSkill):
     @intent_handler(IntentBuilder("DaughterIntent").require("DaughterKeyword"))
     def handle_daughter_intent(self, message):
            
-        with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
+        with open(join(self._dir, 'familybook.json'), "r") as read_file:
             family = json.load(read_file)
 
         membersname = family['family_dictionary']['members']
@@ -108,7 +107,7 @@ class FamilyLearningSkill(MycroftSkill):
     @intent_handler(IntentBuilder("GrandSonIntent").require("GrandSonKeyword"))
     def handle_grand_son_intent(self, message):
 
-        with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
+    with open(join(self._dir, 'familybook.json'), "r") as read_file:
             family = json.load(read_file)
 
         membersname = family['family_dictionary']['members']
@@ -138,7 +137,7 @@ class FamilyLearningSkill(MycroftSkill):
     @intent_handler(IntentBuilder("GrandDaughterIntent").require("GrandDaughterKeyword"))
     def handle_grand_daughter_intent(self, message):
 
-        with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
+        with open(join(self._dir, 'familybook.json'), "r") as read_file:
             family = json.load(read_file)
 
         membersname = family['family_dictionary']['members']
@@ -172,7 +171,7 @@ class FamilyLearningSkill(MycroftSkill):
         print(member)
         member = member.capitalize()
                
-        with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
+        with open(join(self._dir, 'familybook.json'), "r") as read_file:
             family = json.load(read_file)
 
         membersname = family['family_dictionary']['members']
