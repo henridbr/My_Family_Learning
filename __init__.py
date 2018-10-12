@@ -23,7 +23,7 @@ from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
 from mycroft.util.log import getLogger
 from mycroft import intent_handler
-from os.path import dirname
+from os.path import dirname, exists, join
 
 import requests
 import json
