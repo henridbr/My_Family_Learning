@@ -107,7 +107,7 @@ class FamilyLearningSkill(MycroftSkill):
     @intent_handler(IntentBuilder("GrandSonIntent").require("GrandSonKeyword"))
     def handle_grand_son_intent(self, message):
 
-    with open(join(self._dir, 'familybook.json'), "r") as read_file:
+        with open(join(self._dir, 'familybook.json'), "r") as read_file:
             family = json.load(read_file)
 
         membersname = family['family_dictionary']['members']
