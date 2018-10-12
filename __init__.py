@@ -40,14 +40,13 @@ class FamilyLearningSkill(MycroftSkill):
         
     @intent_handler(IntentBuilder("FamilyLearningIntent").require("FamilyLearningKeyword"))
     def handle_family_learning_intent(self, message):
-        print(self._dir)
         self.speak_dialog("save.it.memory")
         
 ##### Son
     @intent_handler(IntentBuilder("SonIntent").require("SonKeyword"))
     def handle_son_intent(self, message):
-        
-        with open("./opt/mycroft/skills/skill_family_learning.henridbr/familybook.json", "r") as read_file:
+
+        with open(join(self._dir, 'familybook.json', "r") as read_file:
             family = json.load(read_file)
 
         membersname = family['family_dictionary']['members']
