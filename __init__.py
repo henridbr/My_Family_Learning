@@ -187,15 +187,20 @@ class FamilyLearningSkill(MycroftSkill):
         memberslivingplace ={}
 
         i=0
-        while i< len(membersname):
-            who = membersname[i]['first_name']
-            where = membersname[i]['location']
-            memberslivingplace[who] = where
-            i = i +1
+        if (len(membersname)=0):
+        
+            self.speak("not sure about that") 
+        
+        else:
+            while i< len(membersname):
+                who = membersname[i]['first_name']
+                where = membersname[i]['location']
+                memberslivingplace[who] = where
+                i = i +1
 
-        livingplace = memberslivingplace[member]
+            livingplace = memberslivingplace[member]
  
-        self.speak('{} is from {}'.format(member, livingplace))
+            self.speak('{} is from {}'.format(member, livingplace))
             
             
     
