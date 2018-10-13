@@ -75,7 +75,7 @@ class FamilyLearningSkill(MycroftSkill):
             self.speak_dialog('{} are your ',family_rank .format(namegroup))
              
         
-"""        
+       
 ##### Son
     @intent_handler(IntentBuilder("SonIntent").require("SonKeyword"))
     def handle_son_intent(self, message):
@@ -196,7 +196,7 @@ class FamilyLearningSkill(MycroftSkill):
                 i = i+1
             self.speak_dialog('{} are your grand daughters'.format(namegroup))
 
-"""            
+            
 #### Living Place
     @intent_handler(IntentBuilder("LivingPlaceIntent").require("LivingPlaceKeyword").require("FamilyFirstName"))
     def handle_living_place(self, message):
