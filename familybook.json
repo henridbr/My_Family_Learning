@@ -22,6 +22,9 @@
 			{
 			"first_name":"Juliette","rank":"grand_daughter","age":"11","father":"Vincent","location":"Thionville"
 			}
+			{
+			"first_name":"Marc","rank":"oncle","age":"89","father":"Jean","location":"Onesse"
+			}
 		]
     }
 }
