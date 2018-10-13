@@ -11,16 +11,16 @@
 			"first_name":"Elodie","rank":"daughter","age":"40","father":"Henri","location":"Fontenay le Comte"
 			},
 			{
-			"first_name":"Anatole","rank":"grand_son","age":"13","father":"Vincent","location":"Thionville"
+			"first_name":"Anatole","rank":"grandson","age":"13","father":"Vincent","location":"Thionville"
 			},
 			{
-			"first_name":"Stephane","rank":"grand_son","age":"10","father":"Christophe","location":"La Rochelle"
+			"first_name":"Stephane","rank":"grandson","age":"10","father":"Christophe","location":"La Rochelle"
 			},
 			{
-			"first_name":"Manon","rank":"grand_daughter","age":"13","father":"Christophe","location":"La Rochelle"
+			"first_name":"Manon","rank":"granddaughter","age":"13","father":"Christophe","location":"La Rochelle"
 			},
 			{
-			"first_name":"Juliette","rank":"grand_daughter","age":"11","father":"Vincent","location":"Thionville"
+			"first_name":"Juliette","rank":"granddaughter","age":"11","father":"Vincent","location":"Thionville"
 			},
 			{
 			"first_name":"Marc","rank":"uncle","age":"89","father":"Jean","location":"Onesse"
