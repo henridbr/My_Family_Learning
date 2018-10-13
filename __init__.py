@@ -75,8 +75,6 @@ class FamilyLearningSkill(MycroftSkill):
             self.speak_dialog('{} are your {}'.format(namegroup,family_rank))
              
         
-       
-##### Son
 
 #### Living Place
     @intent_handler(IntentBuilder("LivingPlaceIntent").require("LivingPlaceKeyword").require("FamilyFirstName"))
