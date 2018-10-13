@@ -41,6 +41,39 @@ class FamilyLearningSkill(MycroftSkill):
     @intent_handler(IntentBuilder("FamilyLearningIntent").require("FamilyLearningKeyword"))
     def handle_family_learning_intent(self, message):
         self.speak_dialog("save.it.memory")
+
+### Find who is my ?        
+    @intent_handler(IntentBuilder("FamilyMemberIntent").require("FamilyMemberKeyword"))
+    def handle_family_member_intent(self, message):
+
+        family_rank = message.data.get('FamilyMember')
+        
+        with open(join(self._dir, 'familybook.json'), "r") as read_file:
+            family = json.load(read_file)
+
+        membersname = family['family_dictionary']['members']
+        
+        namelist = []
+        namegroup = ""
+        
+        i=0
+        while i< len(membersname):
+            if (membersname[i]['rank'] == family_rank):
+                namelist.append(membersname[i]['first_name'])
+            i = i+1
+        i=1
+        if len(namelist) ==0 :
+            self.speak_dialog('you have no ',family_rank)
+        elif len(namelist) ==1 :
+            self.speak_dialog(namelist[0],' is your',family_rank)            
+        else:
+            namegroup = namelist[0]
+            while i< len(namelist):
+                namegroup = namegroup +" and " + namelist[i]
+                i = i+1
+            self.speak_dialog('{} are your ',family_rank .format(namegroup))
+             
+        
         
 ##### Son
     @intent_handler(IntentBuilder("SonIntent").require("SonKeyword"))
