@@ -64,9 +64,9 @@ class FamilyLearningSkill(MycroftSkill):
             i = i+1
         i=1
         if len(namelist) ==0 :
-            self.speak_dialog('you have no ',family_rank)
+            self.speak_dialog('you have no {}'.format(family_rank))
         elif len(namelist) ==1 :
-            self.speak_dialog(namelist[0],' is your',family_rank)            
+            self.speak_dialog('{} is your {}'.format(namelist[0],family_rank))            
         else:
             namegroup = namelist[0]
             while i< len(namelist):
