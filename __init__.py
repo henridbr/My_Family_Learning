@@ -72,7 +72,7 @@ class FamilyLearningSkill(MycroftSkill):
             while i< len(namelist):
                 namegroup = namegroup +" and " + namelist[i]
                 i = i+1
-            self.speak_dialog('{} are your ',family_rank .format(namegroup))
+            self.speak_dialog('{} are your '+family_rank .format(namegroup))
              
         
        
