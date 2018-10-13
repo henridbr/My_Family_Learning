@@ -46,7 +46,7 @@ class FamilyLearningSkill(MycroftSkill):
     @intent_handler(IntentBuilder("FamilyMemberIntent").require("FamilyMemberKeyword"))
     def handle_family_member_intent(self, message):
 
-        family_rank = message.data.get("message")
+        family_rank = message.data.get("match")
         print(">>>>",family_rank)
         
         with open(join(self._dir, 'familybook.json'), "r") as read_file:
