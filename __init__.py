@@ -94,7 +94,7 @@ class FamilyLearningSkill(MycroftSkill):
             if (member.find(membersname[i]['first_name'].lower())>=0):
                 member = membersname[i]['first_name']
             i=i+1
-        
+        print(member)
         i=0
         while i< len(membersname):
             who = membersname[i]['first_name']
