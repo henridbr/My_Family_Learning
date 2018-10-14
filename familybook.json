@@ -2,6 +2,9 @@
     "family_dictionary" :{
         "members": [
 			{
+			"first_name":"Raymond","rank":"father","age":"dead","father":"Gaston","location":"Onesse"
+			},
+			{
 			"first_name":"Christophe","rank":"son","age":"46","father":"Henri","location":"La Rochelle"
 			},
 			{
