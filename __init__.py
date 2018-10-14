@@ -153,7 +153,7 @@ class FamilyLearningSkill(MycroftSkill):
 
 #### Find feature of someone
     @intent_handler(IntentBuilder("SomeOneFeatureIntent").require("SomeOneFeatureKeyword").require("FamilyFirstName"))
-    def handle_someone_age(self, message):
+    def handle_someone_feature(self, message):
   
         member = message.data.get('FamilyFirstName')
                
