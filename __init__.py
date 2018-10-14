@@ -56,7 +56,7 @@ class FamilyLearningSkill(MycroftSkill):
         
         namelist = []
         namegroup = ""
-        
+          
         i=0
         while i< len(membersname):
             if (membersname[i]['rank'] == family_rank):
@@ -125,25 +125,30 @@ class FamilyLearningSkill(MycroftSkill):
         membersname = family['family_dictionary']['members']
 
         membersage ={}
+        foundit = ""
 
         i=0
         while i< len(membersname):
             if (member.find(membersname[i]['first_name'].lower())>=0):
                 member = membersname[i]['first_name']
+                foundit = "found"
             i=i+1
-        
-        i=0
-        while i< len(membersname):
-            who = membersname[i]['first_name']
-            so_age = membersname[i]['age']
-            membersage[who] = so_age
-            i=i+1
-
-        member_age = membersage[member]
-        if (member_age == "dead"):
-            self.speak('{} is {}'.format(member, member_age))
+        if (foundit==""):
+            self.speak('Sorry, I missed something')
         else:
-            self.speak('{} is {} old'.format(member, member_age))
+            print(member)
+            i=0
+            while i< len(membersname):
+                who = membersname[i]['first_name']
+                so_age = membersname[i]['age']
+                membersage[who] = so_age
+                i=i+1
+
+            member_age = membersage[member]
+            if (member_age == "dead"):
+                self.speak('{} is {}'.format(member, member_age))
+            else:
+                self.speak('{} is {} old'.format(member, member_age))
     
     def stop(self):
         pass
