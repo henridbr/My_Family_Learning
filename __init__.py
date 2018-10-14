@@ -176,7 +176,7 @@ class FamilyLearningSkill(MycroftSkill):
         else:
             print(member)
             i=0
-            while i< len(membersmame):
+            while i< len(membersname):
                 who = membersname[i]['first_name']
                 so_feature = membersname[i]['feature']
                 membersfeature[who] = so_feature
