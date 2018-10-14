@@ -47,7 +47,7 @@ class FamilyLearningSkill(MycroftSkill):
     def handle_family_member_intent(self, message):
 
         family_rank = message.data.get("FamilyMemberKeyword")
-        print(">>>>",family_rank)
+#       print(family_rank)
         
         with open(join(self._dir, 'familybook.json'), "r") as read_file:
             family = json.load(read_file)
@@ -81,8 +81,6 @@ class FamilyLearningSkill(MycroftSkill):
     def handle_living_place(self, message):
   
         member = message.data.get('FamilyFirstName')
-        print(member)
-        member = member.capitalize()
                
         with open(join(self._dir, 'familybook.json'), "r") as read_file:
             family = json.load(read_file)
@@ -102,7 +100,7 @@ class FamilyLearningSkill(MycroftSkill):
             who = membersname[i]['first_name']
             where = membersname[i]['location']
             memberslivingplace[who] = where
-            i = i +1
+            i=i+1
 
         livingplace = memberslivingplace[member]
  
