@@ -76,7 +76,7 @@ class FamilyLearningSkill(MycroftSkill):
              
         
 
-#### Living Place
+#### Find Living Place of someone
     @intent_handler(IntentBuilder("LivingPlaceIntent").require("LivingPlaceKeyword").require("FamilyFirstName"))
     def handle_living_place(self, message):
   
@@ -105,8 +105,39 @@ class FamilyLearningSkill(MycroftSkill):
         livingplace = memberslivingplace[member]
  
         self.speak('{} is from {}'.format(member, livingplace))
-            
-            
+      
+       
+#### Find Age of someone
+    @intent_handler(IntentBuilder("SomeOneAgeIntent").require("SomeOneAgeKeyword").require("FamilyFirstName"))
+    def handle_living_place(self, message):
+  
+        member = message.data.get('FamilyFirstName')
+               
+        with open(join(self._dir, 'familybook.json'), "r") as read_file:
+            family = json.load(read_file)
+
+        membersname = family['family_dictionary']['members']
+
+        memberslivingplace ={}
+
+        i=0
+        while i< len(membersname):
+            if (member.find(membersname[i]['first_name'].lower())>=0):
+                member = membersname[i]['first_name']
+            i=i+1
+        
+        i=0
+        while i< len(membersname):
+            who = membersname[i]['first_name']
+            so_age = membersname[i]['age']
+            membersage[who] = so_age
+            i=i+1
+
+        member_age = membersage[member]
+        if (member_age == "dead"):
+            self.speak('{} is {}'.format(member, member_age))
+        else:
+            self.speak('{} is {} old'.format(member, member_age))
     
     def stop(self):
         pass
