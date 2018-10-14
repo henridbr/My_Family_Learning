@@ -90,21 +90,27 @@ class FamilyLearningSkill(MycroftSkill):
         memberslivingplace ={}
 
         i=0
+        foundit = ""
         while i< len(membersname):
             if (member.find(membersname[i]['first_name'].lower())>=0):
                 member = membersname[i]['first_name']
+                foundit = "found"
             i=i+1
-        print(member)
-        i=0
-        while i< len(membersname):
-            who = membersname[i]['first_name']
-            where = membersname[i]['location']
-            memberslivingplace[who] = where
-            i=i+1
+            
+        if (foundit=""):
+            self.speak('Sorry, I missed something')
+        else:
+            print(member)
+            i=0
+            while i< len(membersname):
+                who = membersname[i]['first_name']
+                where = membersname[i]['location']
+                memberslivingplace[who] = where
+                i=i+1
 
-        livingplace = memberslivingplace[member]
+            livingplace = memberslivingplace[member]
  
-        self.speak('{} is from {}'.format(member, livingplace))
+            self.speak('{} is from {}'.format(member, livingplace))
       
        
 #### Find Age of someone
