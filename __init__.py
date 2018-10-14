@@ -118,7 +118,7 @@ class FamilyLearningSkill(MycroftSkill):
 
         membersname = family['family_dictionary']['members']
 
-        memberslivingplace ={}
+        membersage ={}
 
         i=0
         while i< len(membersname):
