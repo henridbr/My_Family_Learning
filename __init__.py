@@ -97,7 +97,7 @@ class FamilyLearningSkill(MycroftSkill):
                 foundit = "found"
             i=i+1
             
-        if (foundit=""):
+        if (foundit==""):
             self.speak('Sorry, I missed something')
         else:
             print(member)
