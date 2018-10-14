@@ -93,6 +93,12 @@ class FamilyLearningSkill(MycroftSkill):
 
         i=0
         while i< len(membersname):
+            if (member.find(membersname[i]['first_name'])==0):
+                member = membersname[i]['first_name']
+            i=i+1
+        
+        i=0
+        while i< len(membersname):
             who = membersname[i]['first_name']
             where = membersname[i]['location']
             memberslivingplace[who] = where
