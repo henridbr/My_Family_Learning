@@ -176,7 +176,7 @@ class FamilyLearningSkill(MycroftSkill):
         else:
             print(member)
             i=0
-            while i< len(membersfeature):
+            while i< len(membersmame):
                 who = membersname[i]['first_name']
                 so_feature = membersname[i]['feature']
                 membersfeature[who] = so_feature
@@ -186,7 +186,7 @@ class FamilyLearningSkill(MycroftSkill):
             if (member_feature == ""):
                 self.speak('Sorry, I don\'t  know more on {}'.format(member))
             else:
-                self.speak('{} is reakky {}'.format(member, member_feature))
+                self.speak('{} is really {}'.format(member, member_feature))
                    
     
     def stop(self):
