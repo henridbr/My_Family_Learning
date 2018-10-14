@@ -149,6 +149,45 @@ class FamilyLearningSkill(MycroftSkill):
                 self.speak('{} is {}'.format(member, member_age))
             else:
                 self.speak('{} is {} old'.format(member, member_age))
+  
+
+#### Find feature of someone
+    @intent_handler(IntentBuilder("SomeOneFeatureIntent").require("SomeOneFeatureKeyword").require("FamilyFirstName"))
+    def handle_someone_age(self, message):
+  
+        member = message.data.get('FamilyFirstName')
+               
+        with open(join(self._dir, 'familybook.json'), "r") as read_file:
+            family = json.load(read_file)
+
+        membersname = family['family_dictionary']['members']
+
+        membersfeature ={}
+        foundit = ""
+
+        i=0
+        while i< len(membersname):
+            if (member.find(membersname[i]['first_name'].lower())>=0):
+                member = membersname[i]['first_name']
+                foundit = "found"
+            i=i+1
+        if (foundit==""):
+            self.speak('Sorry, I missed something')
+        else:
+            print(member)
+            i=0
+            while i< len(membersfeature):
+                who = membersname[i]['first_name']
+                so_feature = membersname[i]['feature']
+                membersfeature[who] = so_feature
+                i=i+1
+
+            member_feature = membersfeature[member]
+            if (member_feature == ""):
+                self.speak('Sorry, I don\'t  know more on {}'.format(member))
+            else:
+                self.speak('{} is reakky {}'.format(member, member_feature))
+                   
     
     def stop(self):
         pass
