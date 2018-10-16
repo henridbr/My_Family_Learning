@@ -188,7 +188,7 @@ class FamilyLearningSkill(MycroftSkill):
             else:
                 self.speak('{} is really {}'.format(member, member_feature))
 
- #### Add first name of someone                
+#### Add first name of someone                
     @intent_handler(IntentBuilder("NewFamilyMemberIntent").require("NewFamilyMemberKeyword").require("NewMemberFirstName"))
     def handle_someone_feature(self, message):
   
