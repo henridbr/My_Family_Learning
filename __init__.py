@@ -42,6 +42,17 @@ class FamilyLearningSkill(MycroftSkill):
     def handle_family_learning_intent(self, message):
         self.speak_dialog("save.it.memory")
 
+#### Add first name of someone                
+    @intent_handler(IntentBuilder("NewFamilyMemberIntent").require("NewFamilyMemberKeyword").require("NewMemberFirstName"))
+    def handle_someone_feature(self, message):
+  
+        newfirstname = message.data.get('NewMemberFirstName')
+    
+    print(newfirstname)
+    self.speak("new name in the family tree",newfirstname)         
+        
+        
+        
 ### Find who is my ?        
     @intent_handler(IntentBuilder("FamilyMemberIntent").require("FamilyMemberKeyword"))
     def handle_family_member_intent(self, message):
