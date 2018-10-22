@@ -51,7 +51,7 @@ class FamilyLearningSkill(MycroftSkill):
     print(newfirstname)
     self.speak("new name in the family tree",newfirstname)         
         
-        
+"""        
         
 ### Find who is my ?        
     @intent_handler(IntentBuilder("FamilyMemberIntent").require("FamilyMemberKeyword"))
@@ -198,7 +198,7 @@ class FamilyLearningSkill(MycroftSkill):
                 self.speak('Sorry, I don\'t  know more on {}'.format(member))
             else:
                 self.speak('{} is really {}'.format(member, member_feature))
-                   
+"""                   
     
     def stop(self):
         pass
