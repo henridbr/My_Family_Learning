@@ -41,6 +41,7 @@ class FamilyLearningSkill(MycroftSkill):
     @intent_handler(IntentBuilder("FamilyLearningIntent").require("FamilyLearningKeyword"))
     def handle_family_learning_intent(self, message):
         self.speak_dialog("save.it.memory")
+        
 """
 #### Add first name of someone                
     @intent_handler(IntentBuilder("NewFamilyMemberIntent").require("NewFamilyMemberKeyword").require("NewMemberFirstName"))
